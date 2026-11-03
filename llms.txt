@@ -1,6 +1,6 @@
 # Weber Metallbau GmbH
 
-> Industrielle Blechfertigung in Mallersdorf-Pfaffenberg: Laserschneiden bis 30 mm auf 12 kW und Abkanten bis 3000 mm.
+> Lohnfertigung aus Blech in Mallersdorf-Pfaffenberg: Laserschneiden bis 30 mm, Abkanten, Zerspanung, Schweißen, Stanzen und komplette Baugruppen.
 
 Weber Metallbau GmbH in Mallersdorf-Pfaffenberg, gegründet 2017 aus der 1996 gegründeten Lehner Metallverarbeitung.
 Rund 20 Mitarbeiter. Zertifiziert nach ISO 9001:2015 (GTÜ). Gefertigt wird für
@@ -11,12 +11,18 @@ und wiederkehrende Serien.
 
 - [Laserschneiden](https://weber-metalltechnik.com/laserschneiden): Bis 30 mm Stahl, Tafelformat 3000 × 1500 mm, 12 kW Faserlaser.
 - [Abkanten](https://weber-metalltechnik.com/abkanten): Trumpf TruBend 5040 — bis 3000 mm Länge, bis 20 mm Blechdicke.
+- [Zerspanung](https://weber-metalltechnik.com/zerspanung): CNC-Drehen und CNC-Fräsen — Spinner TL-510, Mikron-Bearbeitungszentrum.
+- [Schweißen](https://weber-metalltechnik.com/schweissen): Schweißbaugruppen aus Stahl, Edelstahl und Aluminium — gefügt, gerichtet, geprüft.
+- [Stanzen](https://weber-metalltechnik.com/stanzen): Stanzen und Lochen für Serienteile und wiederkehrende Bilder.
+- [Baugruppen](https://weber-metalltechnik.com/baugruppen): Komplette Baugruppen inklusive Montage mit allen DIN- und Normteilen.
 
 ## Anlagen
 
 - Trumpf TruLaser 5030 (Laserschneiden): Laserleistung 12 kW, Tafelformat 3000 × 1500 mm, Stahl bis 30 mm
 - Trumpf TruBend 5040 (Abkanten): Kantlänge bis 3000 mm, Blechdicke bis 20 mm, Programme im Haus
 - Amada ENSIS (Laserschneiden): Einsatz Zuschnitt, Betrieb im Mehrschichtbetrieb, Werkstoffe Stahl · Edelstahl · Alu
+- Spinner TL-510 (CNC-Drehen): Einsatz Rundteile, Losgröße ab Stück 1, Werkstoffe Stahl · Edelstahl · Alu
+- Mikron (CNC-Fräsen): Einsatz Aufnahmen, Passflächen, Losgröße ab Stück 1, Werkstoffe Stahl · Edelstahl · Alu
 
 ## Kontakt
 

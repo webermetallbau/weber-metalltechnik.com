@@ -235,6 +235,11 @@ body.gescrollt .burger,body.menu-offen .burger{color:var(--tinte)}
     rgba(16,22,30,.38) 62%,rgba(16,22,30,.16) 100%)}
 .hero .schleier::after{content:"";position:absolute;inset:auto 0 0;height:30%;
   background:linear-gradient(to top,rgba(16,22,30,.86),transparent)}
+/* 🔴 Noah, 03.11.2026: „Blech in jeder Form seit 1996 … Hintergrund ein bisschen transparenter,
+   sodass man dieses Video im Hintergrund ein bisschen mehr sieht“ — nur der Start-Hero. */
+.hero.start .schleier{background:linear-gradient(97deg,rgba(16,22,30,.80) 0%,rgba(16,22,30,.62) 32%,
+    rgba(16,22,30,.20) 62%,rgba(16,22,30,.04) 100%)}
+.hero.start .schleier::after{background:linear-gradient(to top,rgba(16,22,30,.72),transparent)}
 .hero-in{position:relative;z-index:2;width:100%;
   padding-top:calc(var(--kopf) + 84px);padding-bottom:104px}
 .hero.klein .hero-in{padding-top:calc(var(--kopf) + 96px);padding-bottom:104px}
@@ -336,7 +341,9 @@ body.gescrollt .burger,body.menu-offen .burger{color:var(--tinte)}
    hier 390 px unter dem Text neben dem Formular (Noah, 23.09.2026: „viele Sektionen sind
    unsymmetrisch"). Zentriert sitzen beide Spalten auf derselben Mitte. */
 .rechner .wrap{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:60px;
-  align-items:center}
+  align-items:stretch}
+.rechner .r-links{justify-content:center}
+.rechner .r-form{align-content:center}
 /* 🔴 Die Sektion ist hell, dunkel ist nur das Bedienfeld — ein Bedienfeld an einer
    Maschine ist dunkel. Das ist Form, kein Taktschlag der Seite (Noah, 24.09.2026). */
 .rechner .r-links{display:flex;flex-direction:column;gap:22px}
@@ -463,7 +470,7 @@ figcaption{position:absolute;inset:auto 0 0;padding:44px 22px 16px;font-size:13.
 
 /* =========================================================== Mosaik */
 .mosaik{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.mosaik.acht > .kachel:last-child{grid-column:span 2}
+.mosaik.acht{grid-template-columns:repeat(4,minmax(0,1fr))}
 .kachel{margin:0;position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/2;
   background:var(--stahl);transition:transform .34s cubic-bezier(.2,.8,.2,1),box-shadow .34s ease}
 .kachel img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
@@ -610,7 +617,9 @@ figcaption{position:absolute;inset:auto 0 0;padding:44px 22px 16px;font-size:13.
    Leistungsseite (Noah, 24.09.2026: „die ganze Zeit so hell-dunkel-hell-dunkel").
    Die Bühne bleibt dunkel, weil die Schnittkontur darauf leuchtet. */
 .handgriff .wrap{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:56px;
-  align-items:center}
+  align-items:stretch}
+.hg-text{display:flex;flex-direction:column;justify-content:center}
+.hg-bild{display:grid;align-content:center}
 .hg-wert{display:flex;align-items:baseline;gap:16px;margin-top:26px;padding-top:22px;
   border-top:1px solid var(--linie)}
 .hg-wert .lbl{font-family:"Reddit Mono",monospace;font-size:13.5px;letter-spacing:.1em;
@@ -772,7 +781,8 @@ details[open] summary::after{transform:rotate(-135deg)}
   aspect-ratio:3/2;background:var(--stahl)}
 .hs-bilder img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
 .hs-bilder figure:hover img{transform:scale(1.05)}
-.ap-gitter{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+/* 🔴 03.11.2026: drei Ansprechpartner (Sandra Pscheidl raus) — drei Spalten, keine leere vierte. */
+.ap-gitter{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .ap{padding:28px;border-radius:var(--r);background:var(--weiss);
   display:flex;flex-direction:column;gap:5px;
   transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease}
@@ -791,7 +801,7 @@ details[open] summary::after{transform:rotate(-135deg)}
 
 /* =========================================================== Kontakt */
 .kontaktblock .wrap{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:58px;
-  align-items:start}
+  align-items:stretch}
 .kb-liste{display:grid;gap:18px;margin-top:28px}
 .kb-liste li{display:flex;gap:15px;align-items:flex-start}
 .kb-liste .ik{color:var(--akz);margin-top:3px}
@@ -881,11 +891,11 @@ body.js .rv.da,body.js .hero{opacity:1;translate:none}
 /* =========================================================== Mobil */
 @media (max-width:1080px){
   :root{--kopf:112px}
-  .lk-gitter,.dk-gitter,.masch-gitter,.mosaik,.hs-bilder{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lk-gitter,.dk-gitter,.masch-gitter,.mosaik,.mosaik.acht,.hs-bilder{grid-template-columns:repeat(2,minmax(0,1fr))}
   .masch-gitter > .mk,.masch-gitter > .mk:nth-child(4),.masch-gitter > .mk:nth-child(5){grid-column:auto}
   .masch-gitter{grid-template-columns:repeat(2,minmax(0,1fr))}
   .masch-gitter > .mk:last-child{grid-column:1/-1}
-  .ap-gitter,.qs-liste,.weiter-liste{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .qs-liste,.weiter-liste{grid-template-columns:repeat(2,minmax(0,1fr))}
   .weiter-liste a:last-child{grid-column:1/-1}
   .laufschiene{grid-template-columns:repeat(2,minmax(0,1fr))}
   .laufschiene::before{display:none}
@@ -958,7 +968,7 @@ body.js .rv.da,body.js .hero{opacity:1;translate:none}
      (220 × 16/9 = 391 px) und sprengte die 350-px-Spalte. `width:100%` bindet sie. */
   .lz-bild{min-height:220px;aspect-ratio:16/9;width:100%}
   .lz-text{padding:26px 24px}
-  .lk-gitter,.dk-gitter,.mosaik,.hs-bilder,.masch-gitter,.ap-gitter,.qs-liste,
+  .lk-gitter,.dk-gitter,.mosaik,.mosaik.acht,.hs-bilder,.masch-gitter,.ap-gitter,.qs-liste,
   .weiter-liste,.schritte,.entfernung,.laufschiene,.kennwerte,.wa-liste,.zahlen{
     grid-template-columns:1fr}
   .masch-gitter > .mk:last-child,.weiter-liste a:last-child{grid-column:auto}
@@ -1381,8 +1391,8 @@ body.cur-text .cur-ring,body.cur-text .cur-punkt{opacity:0 !important}
 }
 
 /* ---- Dickenleiste: die Kante, die dicker wird ------------------------------------ */
-.dicken{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:48px 56px;
-  align-items:start;margin-top:44px}
+.dicken{display:grid;grid-template-columns:minmax(0,1fr);gap:44px;margin-top:44px}
+.dicken-unten{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:48px 56px;align-items:stretch}
 .dicke-leiste{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
 .dicke{font:500 15px/1 "Reddit Mono",monospace;padding:0 16px;height:44px;min-width:58px;
   border-radius:var(--rb);border:1px solid var(--linie);background:var(--weiss);
@@ -1391,7 +1401,7 @@ body.cur-text .cur-ring,body.cur-text .cur-punkt{opacity:0 !important}
 .dicke span::after{content:" mm";opacity:.55}
 .dicke:hover{border-color:var(--glut);transform:translateY(-2px)}
 .dicke[aria-checked="true"]{background:var(--glut);color:#fff;border-color:var(--glut)}
-.dicke-buehne{display:flex;flex-direction:column;gap:20px;min-width:0}
+.dicke-buehne{display:flex;flex-direction:column;justify-content:center;gap:20px;min-width:0}
 /* 🔴 Das Blech SITZT AUF und wächst nach oben — so liest man Dicke. Zentriert
    wirkte es wie ein Balken, nicht wie eine Tafel von der Seite. Die gestrichelte
    Linie bei 20 mm ist die Kantgrenze: die einzige echte Schwelle der Anlage. */
@@ -1416,7 +1426,7 @@ body.cur-text .cur-ring,body.cur-text .cur-punkt{opacity:0 !important}
 .dicke-marke{position:absolute;right:18px;top:16px;font:600 15px/1 "Reddit Mono",monospace;
   color:var(--glut-tief);letter-spacing:.04em}
 .dicke-satz{margin:0;font-size:15.5px;line-height:1.6;color:var(--grau);max-width:46ch}
-.dicke-stoffe{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dicke-stoffe{display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0}
 .dicke-kopf{font:500 13px/1.4 "Reddit Mono",monospace;letter-spacing:.07em;
   text-transform:uppercase;color:var(--glut-tief);margin-bottom:14px}
 .ws{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;
@@ -1427,7 +1437,7 @@ body.cur-text .cur-ring,body.cur-text .cur-punkt{opacity:0 !important}
   justify-self:end;font-variant-numeric:tabular-nums}
 .ws-d{grid-column:1/-1;font-size:13.5px;color:var(--grau);font-family:"Reddit Mono",monospace}
 @media (max-width:900px){
-  .dicken{grid-template-columns:1fr;gap:34px}
+  .dicken-unten{grid-template-columns:1fr;gap:34px}
   .dicke-schnitt{height:150px}
 }
 
@@ -1751,24 +1761,26 @@ img[src*="stapel"]{object-position:35% 45%}
 /* ── Mannschaft (15.10.2026, Noah: „wieso versteckst du deren Teambilder so“) ──────────
    Ein großes Mannschaftsbild über die volle Breite, darunter eine volle Dreierreihe.
    Köpfe sitzen im oberen Drittel der Fotos — der Ausschnitt zielt deshalb auf 38 %. */
+.ms-block{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .ms-gitter{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.ms-gitter figure{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--tinte);
+.ms-block figure{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--tinte);
   transition:transform .34s cubic-bezier(.2,.8,.2,1),box-shadow .34s ease}
-.ms-gitter figure:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(16,22,30,.2)}
-.ms-gitter img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%;
+.ms-block figure:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(16,22,30,.2)}
+.ms-block img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%;
   transition:transform .55s cubic-bezier(.2,.8,.2,1)}
-.ms-gitter figure:hover img{transform:scale(1.04)}
+.ms-block figure:hover img{transform:scale(1.04)}
 .ms-gross{grid-column:1/-1;aspect-ratio:16/8}
 .ms-klein{aspect-ratio:3/2}
-.ms-gitter figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 18px 14px;color:#fff;
+.ms-block figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 18px 14px;color:#fff;
   font-size:15px;line-height:1.35;background:linear-gradient(transparent,rgba(16,22,30,.72));
   transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.ms-gitter figure:hover figcaption{transform:translateY(-4px)}
+.ms-block figure:hover figcaption{transform:translateY(-4px)}
 @media (max-width:760px){
+  .ms-block{gap:14px}
   .ms-gitter{grid-template-columns:minmax(0,1fr);gap:14px}
   .ms-gross{aspect-ratio:3/2}
 }
-@media (prefers-reduced-motion:reduce){.ms-gitter figure,.ms-gitter img,.ms-gitter figcaption{transition:none}}
+@media (prefers-reduced-motion:reduce){.ms-block figure,.ms-block img,.ms-block figcaption{transition:none}}
 
 /* ==========================================================================
    Runde 15.10.2026 — „mach die seite mal nicht so monoton sondern mach die richtig geil“
@@ -1796,11 +1808,11 @@ img[src*="stapel"]{object-position:35% 45%}
 
 /* ---- Über-uns-Band: Teamfoto NEBEN dem Text, Eckdaten darunter -------------------- */
 .ueberband{padding:112px 0}
-.ueberband .ub-in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
-  grid-template-areas:"text foto" "eck eck";gap:48px 64px;align-items:stretch}
-.ub-text{grid-area:text;display:flex;flex-direction:column;justify-content:center}
+.ueberband .ub-in{grid-template-columns:minmax(0,1fr);gap:48px}
+.ub-oben{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px 64px;align-items:stretch}
+.ub-text{display:flex;flex-direction:column;justify-content:center}
 .ub-text .knopf{align-self:flex-start}
-.ub-foto{grid-area:foto;margin:0;position:relative;border-radius:var(--r);overflow:hidden;
+.ub-foto{margin:0;position:relative;border-radius:var(--r);overflow:hidden;
   aspect-ratio:3/2;background:var(--stahl);
   transition:transform .34s cubic-bezier(.2,.8,.2,1),box-shadow .34s ease}
 .ub-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;
@@ -1809,11 +1821,12 @@ img[src*="stapel"]{object-position:35% 45%}
 .ub-foto:hover img{transform:scale(1.04)}
 .ub-foto figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 18px 14px;color:#fff;font-size:15px;
   background:linear-gradient(transparent,rgba(16,22,30,.78))}
-.ueberband .ub-eck{grid-area:eck;grid-template-columns:repeat(4,minmax(0,1fr));
+.ueberband .ub-eck{grid-template-columns:repeat(4,minmax(0,1fr));
   background:rgba(255,255,255,.04);backdrop-filter:none;-webkit-backdrop-filter:none;padding:34px 36px}
 body.js .rv.da .ub-foto img{animation:bild-ein 1.2s cubic-bezier(.2,.8,.2,1) both}
 @media (max-width:900px){
-  .ueberband .ub-in{grid-template-columns:minmax(0,1fr);grid-template-areas:"text" "foto" "eck";gap:34px}
+  .ueberband .ub-in{gap:34px}
+  .ub-oben{grid-template-columns:minmax(0,1fr);gap:34px}
   .ueberband .ub-eck{grid-template-columns:repeat(2,minmax(0,1fr));padding:28px 22px;gap:28px 20px}
 }
 
@@ -1859,7 +1872,8 @@ body.js .fotoband.rv.da .worte .wz{animation-delay:calc(var(--w,0) * 55ms + 220m
 
 /* ---- Porträt neben einem Satz ------------------------------------------------------ */
 .portraet{padding:112px 0}
-.pt-in{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:72px;align-items:center}
+.pt-in{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:72px;align-items:stretch}
+.pt-text{display:flex;flex-direction:column;justify-content:center}
 .pt-bild{margin:0;position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--stahl);
   transition:transform .34s cubic-bezier(.2,.8,.2,1),box-shadow .34s ease}
 .pt-bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -1886,7 +1900,7 @@ body.js .portraet.rv.da .pt-bild img{animation:bild-ein 1.3s cubic-bezier(.2,.8,
   transition:transform .36s cubic-bezier(.2,.8,.2,1),box-shadow .36s ease}
 .lr-s2 .lr-karte{aspect-ratio:16/11}
 .lr-bild{margin:0;position:absolute;inset:0;z-index:-1}
-.lr-bild img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.lr-bild img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .lr-karte::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(0deg,rgba(16,22,30,.95) 0%,rgba(16,22,30,.78) 34%,rgba(16,22,30,0) 66%);
   transition:opacity .36s ease}
@@ -1946,7 +1960,7 @@ html.intro-gesehen .intro{display:none !important}
 /* 16.10.2026: Wortpaare bis 20 Zeichen bleiben gekoppelt (keine Waisen). Damit sie am Handy in die Zeile
    passen statt mitten im Wort zu brechen, ist die H2 dort kleiner. Überlange Einzelwörter in den
    Rechtstexten („Universalschlichtungsstelle“) trennen mit Trennstrich statt hart. */
-@media (max-width:480px){h2{font-size:1.5rem}.rechtstext h2{font-size:1.2rem}}
+@media (max-width:480px){.fotoband h2{font-size:1.6rem}.fb-text{min-width:0}h2{font-size:1.5rem}.rechtstext h2{font-size:1.2rem}}
 .rechtstext h1,.rechtstext h2,.rechtshero h1,.rechtstext h2 *,.rechtshero h1 *{hyphens:manual}
 
 /* Anfrageformular: Einwilligung, Köderfeld, Rückmeldung (Livegang 20.10.2026) */
